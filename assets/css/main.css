@@ -1,1 +1,32 @@
 /* This file will hold all of the custom css */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../images/mockup_bg01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+/* navlink editting */
+
+#recipes {
+    margin: ;
+}
+
+#restaurants {
+    margin: ;
+}
+
+
+#what-nom {
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Noto Serif', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Arvo', serif;*/
+    text-align: center;
+}
+
