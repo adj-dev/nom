@@ -1,3 +1,3 @@
 /*
-For now, both front-end and api work can be done in here.
+Perhaps this will house the front-end
 */
