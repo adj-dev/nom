@@ -11,5 +11,7 @@ const settings = {
 }
 
 $.ajax(settings).done(response => {
-  console.log(response);
+  // Define our variables
+  let resultsFound = response.results_found;
+  console.log(resultsFound);
 });
