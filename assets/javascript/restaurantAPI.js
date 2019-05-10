@@ -10,6 +10,6 @@ const settings = {
   }
 }
 
-$.ajax(settings).done(respone => {
+$.ajax(settings).done(response => {
   console.log(response);
 });
