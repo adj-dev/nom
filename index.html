@@ -2,23 +2,61 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <title>NOM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- google font -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Arvo:400,700|Josefin+Sans:400,600,700|Noto+Serif:400,700|Raleway:400,700,900"
+        rel="stylesheet" />
+    <!-- stylesheet -->
+    <link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- in-house css -->
+    <script src="./assets/javascript/app.js" type="text/javascript"></script>
+    <title>NOM | What are you nomming for?</title>
 </head>
 
 <body>
 
-
-  <!-- api -->
-  <script src="assets/javascript/restaurantAPI.js"></script>
-  <script src="assets/javascript/recipeAPI.js"></script>
-  <!-- front-end -->
-  <script src="assets/javascript/app.js"></script>
+    <!-- bg image div -->
+    <div class="background-image"></div>
+    <div class="row">
+        <div class="col s2"></div>
+        <div class="input-field col s6">
+            <input id="food-input" type="text">
+            <label for="food-input">Search</label>
+        </div>
+        <div class="col s2" id="recipes">
+            <h5>Recipes</h5>
+        </div>
+        <div class="col s2" id="restaurants">
+            <h5>Restaurants</h>
+        </div>
+    </div>
+    <div class="container">
+        <!-- search bar -->
+        <!-- Splash message -->
+        <div class="row">
+            <div class="col s12">
+                <br />
+                <br />
+                <h3 id="what-nom">What are you NOMming for?</h3>
+            </div>
+        </div>
+    </div>
+    <!-- jquery cdn for materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- api -->
+    <script src="assets/javascript/restaurantAPI.js"></script>
+    <script src="assets/javascript/recipeAPI.js"></script>
+    <!-- front-end -->
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
