@@ -1,8 +1,3 @@
-/*
-searchTerm should be set to be equal to the input value. To achieve this
-a click handler will be set to trigger this function. 
-*/
-
 function fetchRestaurants(keyword) {
   // Settings for ajax request
   const settings = {
