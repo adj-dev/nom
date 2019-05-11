@@ -1,1 +1,1 @@
-//code goes herre to search recipes from SPoonacular
+// code goes here to search recipes from Spoonacular
