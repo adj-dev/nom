@@ -1,4 +1,10 @@
+// Declare a global variable to hold our list of restaurants
+let restaurantList;
+
 function fetchRestaurants(keyword) {
+  // Set restaurants to an empty array
+  restaurantList = [];
+
   // Settings for ajax request
   const settings = {
     "async": true,
@@ -16,8 +22,6 @@ function fetchRestaurants(keyword) {
     let { restaurants } = response;
     // Grab the results_found property from response
     let resultsFound = response.results_found;
-    // Declare an empty array to hold our desired data
-    let desiredData = [];
     // Iterate through each item (restaurant) in the response
     for (let item of restaurants) {
       let { restaurant } = item;
@@ -33,9 +37,8 @@ function fetchRestaurants(keyword) {
         votes: restaurant.user_rating.votes
       };
       let averageCostForTwo = restaurant.average_cost_for_two;
-
       // Add each hand-picked iteration to the desiredData array
-      desiredData.push({
+      restaurantList.push({
         name,
         cuisines,
         location,
@@ -45,7 +48,28 @@ function fetchRestaurants(keyword) {
         averageCostForTwo
       });
     }
-
-    return desiredData;
+    // Render the results to the DOM
+    renderRestaurants(restaurantList);
   });
 }
+
+// Takes the results as an arg and renders them to the DOM
+function renderRestaurants(results) {
+  for (let i = 0; i < results.length; i++) {
+    let wrapper = $('<div class="wrapper">');
+    let name = $('<h3>');
+
+    name.text(results[i].name);
+    let locale = $('<p>').text(results[i].location.locality);
+    let address = $('<p>').text(`Address: ${results[i].location.address}`);
+    let averageCostForTwo = $('<p>').text(`Average cost for two: $${results[i].averageCostForTwo}`);
+    let rating = $('<p>').text(`Rating: ${results[i].rating.aggregate_rating}`);
+    let votes = $('<p>').text(`Votes: ${results[i].rating.votes}`);
+
+    wrapper.append(name).append(locale).append(averageCostForTwo).append(address).append(rating).append(votes);
+    $('.container').append(wrapper);
+  }
+}
+
+// Make a mock call to the API
+fetchRestaurants('pizza');
