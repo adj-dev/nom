@@ -183,8 +183,8 @@ class nomRecipe {
                 recipeDiv.append(instructionsTitle);
                 recipeDiv.append(p);
                 var instructionsList = recipe.instructionsList;
-                console.log(instructionsList);
-                var instructionsP =  $("<p>)");
+                //console.log(instructionsList);
+                var instructionsP =  $("<p>");
                 for (var i=0; i < instructionsList.length; i++)
                 {
                     var instructions = $("<ul>");
