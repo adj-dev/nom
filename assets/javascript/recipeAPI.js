@@ -24,12 +24,14 @@ class nomRecipe {
     getRecipesInfoByCuisines(searchTerm);
     
     function displayRecipesInfoByCuisines()
-    {        
+    {                
+        //remove the fake contents before filling
+        $(".s4").remove();
         // loop through each recipe collection and display
         for (var i = 0; i < nomRecipes.length; i++) {
             //iterate through each recipe 
             var recipe = nomRecipes[i];
-            //console.log(recipe);
+            //console.log(nomRecipes[i]);
 
             //prep the div that will hold all the information
             var recipeMainDiv = $("<div>");  
@@ -58,7 +60,7 @@ class nomRecipe {
 
             //build the title
             var title = $("<a>");
-            title.href("#");
+            title.attr("href", "#");
             title.text(recipe.title);
             title.addClass("recipeTitle");
             title.attr("id", recipe.id);
@@ -70,14 +72,13 @@ class nomRecipe {
             restaurantDiv.addClass("card-action");
             //create a tag for take me to NOM
             var nom = $("<a>");
-            nom.href("#");
+            nom.attr("href","#");
             nom.text("Take me to the NOM");
             nom.addClass("gotoRestaurant");
             nom.attr("cuisine", recipe.cuisines[0]);
             //attach to the card action Div
             restaurantDiv.append(nom)
 
-            $("#recipe").remove();
             //combine everything to add it to recipe div             
             hoverDiv.append(imageDiv);
             hoverDiv.append(titleDiv);
@@ -89,6 +90,7 @@ class nomRecipe {
 
     function getRecipesInfoByCuisines(searchTerm)
     {
+        console.log("I am here in getRecipesInfoByCuisines");
         searchTerm = 'italian';
         var settings = {
             "async": true,
@@ -97,13 +99,13 @@ class nomRecipe {
             "method": "GET",
             "headers": {
             "X-RapidAPI-Key": "d8801f3ce8msha12100d587bc143p151da1jsn3c1a652ff0a6",
-            "User-Agent": "PostmanRuntime/7.11.0",
+            //"User-Agent": "PostmanRuntime/7.11.0",
             "Accept": "*/*",
             "Cache-Control": "no-cache",
             "Postman-Token": "0155e68f-22b2-49f3-aad2-395f5eebeed9,da7c6390-d5c4-4487-a81f-cc8dd7ec8e37",
-            "Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-            "accept-encoding": "gzip, deflate",
-            "Connection": "keep-alive",
+            //"Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            //"accept-encoding": "gzip, deflate",
+            //"Connection": "keep-alive",
             "cache-control": "no-cache"
             }
         }
@@ -111,7 +113,8 @@ class nomRecipe {
         $.ajax(settings).done(function (response) {
             //return list of recipes
             //noOfResults - this is for future display 12 results per page and display the total no of recipes
-            var recipes = response.recipes
+            var recipes = response.recipes;
+            console.log(recipes);
             //buildRecipesCollection
             for (var i = 0; i < recipes.length; i++)
             {            
