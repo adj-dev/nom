@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- google font -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Arvo:400,700|Josefin+Sans:400,600,700|Noto+Serif:400,700|Raleway:400,700,900"
+        rel="stylesheet" />
+    <!-- stylesheet -->
+    <link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- api -->
+    <script src="assets/javascript/recipeAPI.js"></script>
+    <!-- in-house css -->
+    <script src="./assets/javascript/app.js" type="text/javascript"></script>
+    <title>NOM | Recipes.Places.Food</title>
+</head>
+
+<body>
+
+    <!-- bg image div -->
+    <div class="background-image"></div>
+    <!-- search bar -->
+    <div class="row">
+        <div class="col s2">
+            <h4 id="nomLogo">NOM</h4>
+        </div>
+        <div class="input-field col s6">
+            <input id="food-input" type="text">
+            <label for="food-input">Search</label>
+        </div>
+        <!-- Navbar links -->
+        <div class="col s2">
+            <h5 id="recipes">Recipes</h5>
+        </div>
+        <div class="col s2">
+            <h5 id="restaurants">Restaurants</h>
+        </div>
+    </div>
+    <div class="container">
+    
+        <!-- progress indicator -->
+    <!-- <div class="progress">
+        <div class="indeterminate"></div>
+    </div> -->
+          
+        <!-- Recipe Div Space -->
+
+    <div class="row">
+        <div class="col s12">
+            <h4>Recipes for <span id="keyword">Pizza</span></h4>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="col s12">
+            <!-- <h5 id="foundResults">We found 213 results for you</h5> -->
+        </div>
+    </div>
+
+    <div class="row" id= "recipe">
+      <div class="col s4">
+        <div class="card hoverable">
+          <div class="card-image">
+            <img class="imgRecipe" src="./assets/images/mock_recipe_pics/arugula.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#" class="recipeTitle">Arugula Margherita Pizza</a>
+          </div>
+          <div class="card-action">
+            <a href="#">Take me to the NOM</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="card hoverable">
+          <div class="card-image">
+            <img src="./assets/images/mock_recipe_pics/basilstrawb.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#">Basil and Strawberry Summer Pizza</a>
+          </div>
+          <div class="card-action">
+            <a href="#">Take me to the NOM</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="card hoverable">
+          <div class="card-image">
+            <img src="./assets/images/mock_recipe_pics/canadian.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#">Garlic Canadian Ham Pizza</a>
+          </div>
+          <div class="card-action">
+            <a href="#">Take me to the NOM</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s4">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="./assets/images/mock_recipe_pics/heather-gill-1403917-unsplash.jpg">
+              </div>
+              <div class="card-content">
+                <a href="#">Roasted Heirloom Galette</a>
+              </div>
+              <div class="card-action">
+                <a href="#">Take me to the NOM</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="./assets/images/mock_recipe_pics/olivebacon.jpg">
+              </div>
+              <div class="card-content">
+                <a href="#">Green Olive Prosciutto Pizza</a>
+              </div>
+              <div class="card-action">
+                <a href="#">Take me to the NOM</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img id="apiPic" src="./assets/images/mock_recipe_pics/roastedrose.jpg">
+              </div>
+              <div class="card-content">
+                <a href="#">Roasted Rosemary Three Cheese Pizza</a>
+              </div>
+              <div class="card-action">
+                <a href="#">Take me to the NOM</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Recipe + Ingredient Layout -->
+
+
+    <!-- footer -->
+    <div class="footer">
+        <h6>Powered by Zomato and Spoonacular</h6>
+    </div>
+              
+    <!-- jquery cdn for materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- api -->
+    <script src="assets/javascript/restaurantAPI.js"></script>
+    <script src="assets/javascript/recipeAPI.js"></script>
+    <!-- front-end -->
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
