@@ -18,7 +18,7 @@ class nomRecipe {
     };
 
     let nomRecipes = [];
-    
+    let noOfResults = 0;
     //set var searchTerm until its hooked to real term
     var searchTerm =  "italian";
     getRecipesInfoByCuisines(searchTerm);
@@ -30,29 +30,59 @@ class nomRecipe {
             //iterate through each recipe 
             var recipe = nomRecipes[i];
             //console.log(recipe);
-            //build the title 
-            var title = $("<h3>");  
-            title.text(recipe.title);
-            title.addClass("recipeTitle");
-            title.attr("id", recipe.id);
-            
+
             //prep the div that will hold all the information
             var recipeMainDiv = $("<div>");  
-            recipeMainDiv.addClass("col-md-4");
-            //get one p to add as needed
-            var p = $("<p>)");
+            recipeMainDiv.addClass("col s4")
+
+            //second div for hoverable
+            var hoverDiv = $("<div>");
+            hoverDiv.addClass("card hoverable");
+
+            //div for images
+            var imageDiv = $("<div>");
+            imageDiv.addClass("card-image");
 
             //prep the image
             var src = recipe.imageSrc;
             var img =$("<img>");
             img.addClass("imgRecipe");
             img.attr("id", recipe.id);
-            img.attr("src", src);   
-            //combine everything to add it to recipe div
-            recipeMainDiv.append(p);
-            recipeMainDiv.append(img);   
-            recipeMainDiv.append(p);
-            recipeMainDiv.append(title);
+            img.attr("src", src);  
+            //attch the image to imageDiv
+            imageDiv.append(img);
+
+            //build the titleDiv 
+            var titleDiv = $("<div>");  
+            titleDiv.addClass("card-content");
+
+            //build the title
+            var title = $("<a>");
+            title.href("#");
+            title.text(recipe.title);
+            title.addClass("recipeTitle");
+            title.attr("id", recipe.id);
+            //attach to titleDiv
+            titleDiv.append(title);
+
+            //prep card action Div for going to restaurants route
+            var restaurantDiv = $("<div>");
+            restaurantDiv.addClass("card-action");
+            //create a tag for take me to NOM
+            var nom = $("<a>");
+            nom.href("#");
+            nom.text("Take me to the NOM");
+            nom.addClass("gotoRestaurant");
+            nom.attr("cuisine", recipe.cuisines[0]);
+            //attach to the card action Div
+            restaurantDiv.append(nom)
+
+            $("#recipe").remove();
+            //combine everything to add it to recipe div             
+            hoverDiv.append(imageDiv);
+            hoverDiv.append(titleDiv);
+            hoverDiv.append(restaurantDiv);  
+            recipeMainDiv.append(hoverDiv);
             $("#recipe").append(recipeMainDiv);
         }
     }
@@ -63,7 +93,7 @@ class nomRecipe {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10&tags=" + searchTerm,
+            "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=12&tags=" + searchTerm,
             "method": "GET",
             "headers": {
             "X-RapidAPI-Key": "d8801f3ce8msha12100d587bc143p151da1jsn3c1a652ff0a6",
@@ -80,6 +110,7 @@ class nomRecipe {
       
         $.ajax(settings).done(function (response) {
             //return list of recipes
+            //noOfResults - this is for future display 12 results per page and display the total no of recipes
             var recipes = response.recipes
             //buildRecipesCollection
             for (var i = 0; i < recipes.length; i++)

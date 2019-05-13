@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Arvo:400,700|Josefin+Sans:400,600,700|Noto+Serif:400,700|Raleway:400,700,900"
         rel="stylesheet" />
+    <!-- api -->
+    <script src="assets/javascript/recipeAPI.js"></script>
     <!-- stylesheet -->
     <link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
     <!-- jquery cdn -->
@@ -65,14 +67,14 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" id= "recipe">
       <div class="col s4">
         <div class="card hoverable">
           <div class="card-image">
-            <img src="./assets/images/mock_recipe_pics/arugula.jpg">
+            <img class="imgRecipe" src="./assets/images/mock_recipe_pics/arugula.jpg">
           </div>
           <div class="card-content">
-            <a href="#">Arugula Margherita Pizza</a>
+            <a href="#" class="recipeTitle">Arugula Margherita Pizza</a>
           </div>
           <div class="card-action">
             <a href="#">Take me to the NOM</a>
