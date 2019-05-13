@@ -5,22 +5,25 @@
 }
 
 body {
-    background-image: url(../images/mockup_bg01.png);
-    background-size: auto;
+    /* background: rgb(190,190,190); */
+    background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 /* navlink editting */
 
-.nomLogo {
+#nomLogo {
     font-family: 'Noto Serif', serif;
     text-align: center;
+    padding: 10%;
 }
 
 #recipes {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
+    padding-left: 3rem;
 }
 
 #restaurants {
@@ -29,7 +32,33 @@ body {
     padding-top: 1.25rem;
 }
 
-/* splash message */
+/* recipes layout */
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 0 !important;
+}
+
+#keyword{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic; 
+}
+
+#foundResults {
+    font-family: 'Raleway', sans-serif;
+}
+
+.card {
+    font-family: 'Raleway', sans-serif;
+    max-width: 75%;
+    margin: 10% auto; 
+}
+
+.card-image {
+    max-height: 100px;
+    overflow: hidden;
+}
+
 
 #what-nom {
     font-family: 'Raleway', sans-serif;
