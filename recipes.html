@@ -17,6 +17,8 @@
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- api -->
+    <script src="assets/javascript/recipeAPI.js"></script>
     <!-- in-house css -->
     <script src="./assets/javascript/app.js" type="text/javascript"></script>
     <title>NOM | Recipes.Places.Food</title>
@@ -61,18 +63,18 @@
     
     <div class="row">
         <div class="col s12">
-            <h5 id="foundResults">We found 213 results for you</h5>
+            <!-- <h5 id="foundResults">We found 213 results for you</h5> -->
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" id= "recipe">
       <div class="col s4">
         <div class="card hoverable">
           <div class="card-image">
-            <img src="./assets/images/mock_recipe_pics/arugula.jpg">
+            <img class="imgRecipe" src="./assets/images/mock_recipe_pics/arugula.jpg">
           </div>
           <div class="card-content">
-            <a href="#">Arugula Margherita Pizza</a>
+            <a href="#" class="recipeTitle">Arugula Margherita Pizza</a>
           </div>
           <div class="card-action">
             <a href="#">Take me to the NOM</a>
