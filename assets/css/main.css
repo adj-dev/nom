@@ -27,6 +27,7 @@ h5 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
+    margin-top: 10%;
 }
 
 #getRestaurants > h5 {
@@ -34,14 +35,28 @@ h5 {
     text-align: center;
     padding-top: 1.25rem;
     margin-right: 50%;
+    margin-top: 10%;
+}
+
+#getRestaurantsIndex > h5 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding-top: 0.75rem;
+    margin-right: 50%;
+    margin-top: 10%;
 }
 
 #indexBg {
-    max-height: 100%;
-    background-image: url(../images/bg01.jpg);
+    height: 100vh;
+    background-image: url(../images/mockup_bg01.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+input#food-input {
+    color: white;
+    width: 80%;
 }
 
 /****************** recipes list layout **********************/
@@ -71,6 +86,7 @@ h5 {
     max-height: 100px;
     overflow: hidden;
 }
+
 /****************** individual recipe layout **********************/
 #recipeLayoutBg {
     max-height: 100%;
@@ -116,7 +132,7 @@ h5 {
 
 #restaurantBg {
     height: 100vh;
-    background-image: url(../images/restaurantbg.jpg);
+    background-image: url(../images/restaurant2.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -125,7 +141,8 @@ h5 {
 #restaurantBlurb {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    color: white;
+    color: goldenrod;
+    margin-left: -10%;
 }
 
 #nomLogoRest {
