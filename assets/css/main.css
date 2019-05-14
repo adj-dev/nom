@@ -15,6 +15,11 @@ h5 {
 
 /****************** navlink **********************/
 
+.header {
+
+    display: none
+}
+
 #nomLogo {
     font-family: 'Raleway', sans-serif;
     text-align: center;
