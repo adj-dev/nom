@@ -56,11 +56,11 @@
       <div class="col s4">
         <div class="card" id="ingredientCard">
           <div class="card-image">
-            <img src="./assets/images/ingredients.jpg">
+            <img id="recipe-image" src="./assets/images/ingredients.jpg">
           </div>
-          <div class="card-content">
+          <div id="ingredients" class="card-content">
             <h5 class="cardHeader">Ingredients</h5>
-              <ul>
+              <ul id="ingredList">
                 <li>Basil Pesto</li>
                 <li>Strawberries</li>
                 <li>Fresh Basil Leaves</li>
@@ -72,13 +72,13 @@
       <div class="col s8">
         <div class="card" id="recipeCard">
           <div class="card-image" id="recipeSpot">
-            <img src="./assets/images/mock_recipe_pics/basilstrawb.jpg">
+            <img id="recipeImage" src="./assets/images/mock_recipe_pics/basilstrawb.jpg">
           </div>
           <div class="card-content">
-            <h5 class="cardHeader">RECIPE</h5>
+            <h5 id="recipeName" class="cardHeader">RECIPE</h5>
             <hr>
               <div class="recipeContent">
-                  <p>Ennui photo booth before they sold out fingerstache tousled kickstarter meditation keffiyeh beard next level hot chicken. Roof party everyday carry schlitz yuccie narwhal marfa chillwave. Offal church-key forage franzen sartorial shaman swag vice hammock, hashtag celiac bitters lyft yuccie tofu. </p>
+                  <p id="recipe_instructions">Ennui photo booth before they sold out fingerstache tousled kickstarter meditation keffiyeh beard next level hot chicken. Roof party everyday carry schlitz yuccie narwhal marfa chillwave. Offal church-key forage franzen sartorial shaman swag vice hammock, hashtag celiac bitters lyft yuccie tofu. </p>
             </div>
             <div class="card-action">
                 <a href="#" id="restaurantRequest">Nah, take me places</a>
@@ -104,6 +104,14 @@
     <script src="assets/javascript/recipeAPI.js"></script>
     <!-- front-end -->
     <script src="assets/javascript/app.js"></script>
+    <script>
+      //
+      $(document).ready(function(){
+        var recipeId = localStorage.getItem("recipeId");
+        console.log("SearchTerm is: " + recipeId)
+        getRecipesInfoByID(recipeId);
+      });       
+    </script>
 </body>
 
 </html>
