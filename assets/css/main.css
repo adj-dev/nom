@@ -16,22 +16,32 @@ h5 {
 /****************** navlink **********************/
 
 #nomLogo {
-    font-family: 'Noto Serif', serif;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     padding: 10%;
+    margin-left: 5%;
+    margin-top: 0.52rem;
 }
 
 #recipes {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
-    padding-left: 3rem;
 }
 
 #restaurants {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
+    margin-right: 50%;
+}
+
+#indexBg {
+    max-height: 100%;
+    background-image: url(../images/bg01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 input#food-input {
@@ -44,11 +54,6 @@ input#food-input {
     background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%);
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-h4 {
-    font-family: 'Raleway', sans-serif;
-    margin: 0 0 !important;
 }
 
 #keyword{
@@ -104,9 +109,6 @@ h4 {
     margin-bottom: 5%;
 }
 
-#restaurantRequest {
-    margin
-}
 
 #what-nom {
     font-family: 'Raleway', sans-serif;
@@ -124,7 +126,7 @@ h4 {
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: rgba(213, 205, 219, 0.7);
-   color: rgba(122, 122, 122, 1);
+   background-color: rgb(213, 205, 219);
+   color: rgb(122, 122, 122);
    text-align: center; 
 }
