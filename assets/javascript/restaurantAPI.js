@@ -55,6 +55,8 @@ function fetchRestaurants(keyword) {
 
 // Takes the results (restaurant list) as an arg and renders them to the DOM
 function renderRestaurants(results) {
+  // Clear the current results if user makes another search
+  $('#results').empty();
   for (let i = 0; i < results.length; i++) {
     let place = results[i];
     // Create wrapper divs with Materialize classes for a card
@@ -64,14 +66,18 @@ function renderRestaurants(results) {
     let imgDiv = $('<div class="card-image">');
     let img = $('<img src="assets/images/nom.jpg">');
     imgDiv.append(img);
-    // Set up card-title div
+    // Set up card-content div
     let contentDiv = $('<div class="card-content">');
     let title = $('<span class="card-title">');
+    let rating = $('<p>').text(`Rating: ${place.rating.aggregate_rating} / 5`);
+    let votes = $('<p>').text(`Votes: ${place.rating.votes}`);
+    let locale = $('<p>').text(`Where: ${place.location.locality}`);
+    let cost = $('<p>').text(`Average cost for two: $${place.averageCostForTwo}`);
     title.text(place.name);
-    contentDiv.append(title);
+    contentDiv.append(title, rating, votes, locale, cost);
     // Set up card-action div
     let actionDiv = $('<div class="card-action">');
-    let a = $('<a href="#">');
+    let a = $(`<a href="${place.url}" target="_blank">`);
     a.text('More...');
     actionDiv.append(a);
     // Join it all together
@@ -79,17 +85,25 @@ function renderRestaurants(results) {
     col.append(card);
     // Toss it into the DOM
     $('#results').append(col);
-
-    // let locale = $('<p>').text(place.location.locality);
-    // let address = $('<p>').text(`Address: ${place.location.address}`);
-    // let averageCostForTwo = $('<p>').text(`Average cost for two: $${place.averageCostForTwo}`);
-    // let rating = $('<p>').text(`Rating: ${place.rating.aggregate_rating}`);
-    // let votes = $('<p>').text(`Votes: ${place.rating.votes}`);
-
-    // col.append(name).append(locale).append(averageCostForTwo).append(address).append(rating).append(votes);
-    // $('.container').append(col);
   }
 }
 
-// Make a mock call to the API
-fetchRestaurants('pizza');
+// Submit handler for user input
+$(function () {
+  // click handler for the submit button
+  $(document).on('click', '#food-submit', e => {
+    let searchTerm = e.target.parentElement.children[0].value;
+    // console.log(searchTerm);
+    fetchRestaurants(searchTerm);
+  });
+  // handler for when user uses enter key
+  $(document).on('keydown', '#food-input', e => {
+    if (e.keyCode === 13) {
+      let searchTerm = e.target.value;
+      // Only attempt api call if input isn't empty
+      if (searchTerm != '') {
+        fetchRestaurants(searchTerm);
+      }
+    }
+  });
+});
