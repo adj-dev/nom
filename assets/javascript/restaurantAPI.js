@@ -1,4 +1,10 @@
+// Declare a global variable to hold our list of restaurants
+let restaurantList;
+
 function fetchRestaurants(keyword) {
+  // Set restaurants to an empty array
+  restaurantList = [];
+
   // Settings for ajax request
   const settings = {
     "async": true,
@@ -16,8 +22,6 @@ function fetchRestaurants(keyword) {
     let { restaurants } = response;
     // Grab the results_found property from response
     let resultsFound = response.results_found;
-    // Declare an empty array to hold our desired data
-    let desiredData = [];
     // Iterate through each item (restaurant) in the response
     for (let item of restaurants) {
       let { restaurant } = item;
@@ -33,9 +37,8 @@ function fetchRestaurants(keyword) {
         votes: restaurant.user_rating.votes
       };
       let averageCostForTwo = restaurant.average_cost_for_two;
-
       // Add each hand-picked iteration to the desiredData array
-      desiredData.push({
+      restaurantList.push({
         name,
         cuisines,
         location,
@@ -45,7 +48,48 @@ function fetchRestaurants(keyword) {
         averageCostForTwo
       });
     }
-
-    return desiredData;
+    // Render the results to the DOM
+    renderRestaurants(restaurantList);
   });
 }
+
+// Takes the results (restaurant list) as an arg and renders them to the DOM
+function renderRestaurants(results) {
+  for (let i = 0; i < results.length; i++) {
+    let place = results[i];
+    // Create wrapper divs with Materialize classes for a card
+    let col = $('<div class="col m12 l6">');
+    let card = $('<div class="card">');
+    // Set up card-image div
+    let imgDiv = $('<div class="card-image">');
+    let img = $('<img src="assets/images/nom.jpg">');
+    imgDiv.append(img);
+    // Set up card-title div
+    let contentDiv = $('<div class="card-content">');
+    let title = $('<span class="card-title">');
+    title.text(place.name);
+    contentDiv.append(title);
+    // Set up card-action div
+    let actionDiv = $('<div class="card-action">');
+    let a = $('<a href="#">');
+    a.text('More...');
+    actionDiv.append(a);
+    // Join it all together
+    card.append(imgDiv).append(contentDiv).append(actionDiv);
+    col.append(card);
+    // Toss it into the DOM
+    $('#results').append(col);
+
+    // let locale = $('<p>').text(place.location.locality);
+    // let address = $('<p>').text(`Address: ${place.location.address}`);
+    // let averageCostForTwo = $('<p>').text(`Average cost for two: $${place.averageCostForTwo}`);
+    // let rating = $('<p>').text(`Rating: ${place.rating.aggregate_rating}`);
+    // let votes = $('<p>').text(`Votes: ${place.rating.votes}`);
+
+    // col.append(name).append(locale).append(averageCostForTwo).append(address).append(rating).append(votes);
+    // $('.container').append(col);
+  }
+}
+
+// Make a mock call to the API
+fetchRestaurants('pizza');
