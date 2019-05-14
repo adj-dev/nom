@@ -80,3 +80,7 @@ h4 {
    color: rgba(122, 122, 122, 1);
    text-align: center; 
 }
+
+.card-content{
+    height: 110.4px;
+}
