@@ -8,6 +8,11 @@ h3 {
     margin: 0 0 1.2rem 0 !important;
 }
 
+h5 {
+    margin: 0;
+    margin-bottom: 5%;
+}
+
 /****************** navlink **********************/
 
 #nomLogo {
@@ -27,6 +32,10 @@ h3 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
+}
+
+input#food-input {
+    width: 80%;
 }
 
 /****************** recipes list layout **********************/
@@ -63,15 +72,40 @@ h4 {
 }
 /****************** individual recipe layout **********************/
 #recipeLayoutBg {
-    height: 50%;
+    max-height: 100%;
     background-image: url(../images/bg01.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-#recipe-spot {
+#ingredientCard {
+    max-width: 100%;
+}
+
+#cardHeader {
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+#recipeCard {
+    max-width: 100%;
+    margin: 5% auto;
+    margin-bottom: 30%
+}
+
+#recipeSpot {
     max-height: 300px;
     overflow: hidden;
+}
+
+.recipeContent {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#restaurantRequest {
+    margin
 }
 
 #what-nom {
