@@ -23,10 +23,6 @@ h5 {
     margin-top: 0.52rem;
 }
 
-.navbarLink {
-    margin: 0 0 !important;
-}
-
 #recipes {
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -37,6 +33,7 @@ h5 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
+    margin-right: 50%;
 }
 
 #indexBg {
