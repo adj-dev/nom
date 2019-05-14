@@ -20,9 +20,6 @@ class nomRecipe {
     let nomRecipes = [];
 
     let noOfResults = 0;
-    //set var searchTerm until its hooked to real term
-    var searchTerm =  "italian";
-    getRecipesInfoByCuisines(searchTerm);
     
     function displayRecipesInfoByCuisines()
 
@@ -92,8 +89,6 @@ class nomRecipe {
 
     function getRecipesInfoByCuisines(searchTerm)
     {
-        console.log("I am here in getRecipesInfoByCuisines");
-        searchTerm = 'italian';
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -246,4 +241,23 @@ class nomRecipe {
         //get the id and send it for the display detailed info function
         var recipeId = $(this)[0].id;
         displayRecipesDetailedById(recipeId);
+    });
+
+    // Submit handler for user input
+
+    // click handler for the submit button
+    $(document).on('click', '#food-submit', e => {
+        let searchTerm = e.target.parentElement.children[0].value;
+        // console.log(searchTerm);
+        getRecipesInfoByCuisines(searchTerm);
+    });
+    // handler for when user uses enter key
+    $(document).on('keydown', '#food-input', e => {
+        if (e.keyCode === 13) {
+            searchTerm = e.target.value;
+            // Only attempt api call if input isn't empty
+            if (searchTerm != '') {
+                getRecipesInfoByCuisines(searchTerm);
+            }
+        }
     });
