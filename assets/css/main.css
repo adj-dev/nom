@@ -8,17 +8,34 @@ body {
     background-image: url(../images/mockup_bg01.png);
     background-size: auto;
     background-repeat: no-repeat;
-    
-    
-    
+    background-attachment: fixed;
 }
+
 
 /* navlink editting */
 
-.nomLogo {
-    font-family: 'Noto Serif', serif;
-    text-align: center;
+.header {
+    display:none;
+    background-color: rgba(213, 205, 219, 0.7);
 }
+
+.nomLogo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    line-height: 7rem;
+    text-align: center;
+    color: azure
+}
+
+.container {
+    height: 100vh;
+    margin-bottom: -40px;
+    /* position: relative; */
+}
+
+.push {
+    height: 50px;
+  }
 
 #recipes {
     font-family: 'Raleway', sans-serif;
@@ -46,11 +63,14 @@ body {
 
 /* footer */
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: rgba(213, 205, 219, 0.7);
-   color: rgba(122, 122, 122, 1);
-   text-align: center; 
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(213, 205, 219, 1);
+    color: rgba(122, 122, 122, 1);
+    text-align: center; 
+    min-height: 40px;
+    max-height: 40px;
 }
