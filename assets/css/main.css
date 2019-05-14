@@ -23,13 +23,13 @@ h5 {
     margin-top: 0.52rem;
 }
 
-#recipes {
+#getRecipes > h5 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
 }
 
-#restaurants {
+#getRestaurants > h5 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-top: 1.25rem;
@@ -42,10 +42,6 @@ h5 {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
-
-input#food-input {
-    width: 80%;
 }
 
 /****************** recipes list layout **********************/
@@ -109,15 +105,35 @@ input#food-input {
     margin-bottom: 5%;
 }
 
-
 #what-nom {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     line-height: 5rem;
-    /*
-    font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Arvo', serif;*/
     text-align: center;
+}
+
+/***************** restaurant page *****************/
+
+#restaurantBg {
+    background-image: url(../images/restaurantbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#restaurantBlurb {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+#nomLogoRest {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding: 10%;
+    margin-left: 5%;
+    margin-top: 0.52rem;
+    color: white;
 }
 
 /****************** footer **********************/
