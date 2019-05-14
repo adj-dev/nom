@@ -1,17 +1,19 @@
-/* This file will hold all of the custom css */
+/************** overall html *********************/
 * {
     padding: 0;
     margin: 0;
 }
 
-body {
-    /* background: rgb(190,190,190); */
-    background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%);
-    background-size: cover;
-    background-repeat: no-repeat;
+h3 {
+    margin: 0 0 1.2rem 0 !important;
 }
 
-/* navlink editting */
+h5 {
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+/****************** navlink **********************/
 
 #nomLogo {
     font-family: 'Noto Serif', serif;
@@ -32,7 +34,17 @@ body {
     padding-top: 1.25rem;
 }
 
-/* recipes layout */
+input#food-input {
+    width: 80%;
+}
+
+/****************** recipes list layout **********************/
+
+#recipeBg {
+    background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 h4 {
     font-family: 'Raleway', sans-serif;
@@ -58,7 +70,43 @@ h4 {
     max-height: 100px;
     overflow: hidden;
 }
+/****************** individual recipe layout **********************/
+#recipeLayoutBg {
+    max-height: 100%;
+    background-image: url(../images/bg01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
+#ingredientCard {
+    max-width: 100%;
+}
+
+#cardHeader {
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+#recipeCard {
+    max-width: 100%;
+    margin: 5% auto;
+    margin-bottom: 30%
+}
+
+#recipeSpot {
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.recipeContent {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#restaurantRequest {
+    margin
+}
 
 #what-nom {
     font-family: 'Raleway', sans-serif;
@@ -70,7 +118,7 @@ h4 {
     text-align: center;
 }
 
-/* footer */
+/****************** footer **********************/
 .footer {
    position: fixed;
    left: 0;

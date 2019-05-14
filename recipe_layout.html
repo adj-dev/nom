@@ -25,7 +25,7 @@
 <body>
 
     <!-- bg image div -->
-    <div class="background-image"></div>
+    <div class="background-image" id="recipeLayoutBg">
     <!-- search bar -->
     <div class="row">
         <div class="col s2">
@@ -51,26 +51,52 @@
     </div> -->
     
     <!-- Recipe + Ingredient Layout -->
+
     <div class="row">
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-content white-text">
-              <span class="card-title">Basil and Strawberry Summer Pizza</span>
-              <p>Af bushwick tacos chambray vaporware austin actually gluten-free marfa drinking vinegar vape. Venmo asymmetrical snackwave vape brooklyn iceland next level jean shorts shabby chic enamel pin pickled activated charcoal. Wolf shaman plaid, literally pork belly vaporware bicycle rights man bun. Vape everyday carry shabby chic hell of. Biodiesel affogato gastropub, PBR&B bushwick blog la croix enamel pin drinking vinegar whatever meh.
-            </p>
+      <div class="col s4">
+        <div class="card" id="ingredientCard">
+          <div class="card-image">
+            <img src="./assets/images/ingredients.jpg">
+          </div>
+          <div class="card-content">
+            <h5 class="cardHeader">Ingredients</h5>
+              <ul>
+                <li>Basil Pesto</li>
+                <li>Strawberries</li>
+                <li>Fresh Basil Leaves</li>
+                <li>Pizza Dough</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col s8">
+        <div class="card" id="recipeCard">
+          <div class="card-image" id="recipeSpot">
+            <img src="./assets/images/mock_recipe_pics/basilstrawb.jpg">
+          </div>
+          <div class="card-content">
+            <h5 class="cardHeader">RECIPE</h5>
+            <hr>
+              <div class="recipeContent">
+                  <p>Ennui photo booth before they sold out fingerstache tousled kickstarter meditation keffiyeh beard next level hot chicken. Roof party everyday carry schlitz yuccie narwhal marfa chillwave. Offal church-key forage franzen sartorial shaman swag vice hammock, hashtag celiac bitters lyft yuccie tofu. </p>
             </div>
             <div class="card-action">
-              <a href="#">Nah, take me to the NOM</a>
+                <a href="#" id="restaurantRequest">Nah, take me places</a>
             </div>
           </div>
         </div>
       </div>
-
-    <!-- footer -->
-    <div class="footer">
-        <h6>Powered by Zomato and Spoonacular</h6>
     </div>
-              
+
+
+    
+    <!-- footer -->
+      <div class="footer">
+          <h6>Powered by Zomato and Spoonacular</h6>
+      </div>
+
+    </div>
+  </div>          
     <!-- jquery cdn for materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- api -->

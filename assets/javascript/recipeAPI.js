@@ -18,12 +18,14 @@ class nomRecipe {
     };
 
     let nomRecipes = [];
+
     let noOfResults = 0;
     //set var searchTerm until its hooked to real term
     var searchTerm =  "italian";
     getRecipesInfoByCuisines(searchTerm);
     
     function displayRecipesInfoByCuisines()
+
     {                
         //remove the fake contents before filling
         $(".s4").remove();
