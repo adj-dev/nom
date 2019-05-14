@@ -39,11 +39,11 @@
             <label for="food-input">Search</label>
         </div>
         <!-- Navbar links -->
-        <div class="col s2 spacing">
-            <a href="./recipes.html" id="getRecipes">Recipes</a>
+        <div class="col s2" id="recipes">
+            <a id="getRecipes">Recipes</a>
         </div>
-        <div class="col s3 spacing">
-            <a href="./restaurants.html" id="getRestaurantsIndex">Restaurants</a>
+        <div class="col s3" id="restaurants">
+            <a id="getRestaurants">Restaurants</a>
         </div>
     </div>
     <div class="container">
@@ -72,16 +72,38 @@
     <script src="assets/javascript/recipeAPI.js"></script>
     <!-- front-end -->
     <script src="assets/javascript/app.js"></script>
-
-    <script>src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
-
     <script>
-            $(document).ready(function () {
-
-                $(".header").slideDown(2000);
-
+        
+        // click handler for the recipe
+        $(document).on('click', '#getRecipes', function() {
+                searchTerm = $("#food-input").val();
+                //console.log(searchTerm);
+                // Only attempt api call if input isn't empty
+                if (searchTerm != '') {  
+                    localStorage.clear();
+                    localStorage.setItem("search", searchTerm);
+                    window.location.href="recipes.html";
+                }
             });
+        // click handler for the restaurants
+        $(document).on('keydown', '#getRestaurants', e => {
+            searchTerm = $("#food-input").val();
+                //console.log(searchTerm);
+                // Only attempt api call if input isn't empty
+                if (searchTerm != '') {  
+                    localStorage.clear();
+                    localStorage.setItem("search", searchTerm);
+                    window.location.href="restaurants.html";
+                }
+        });
+
+        $(document).ready(function () {
+
+            $(".header").slideDown(2000);
+
+        });
     </script>
+    <script>src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</script>
 </body>
 
 </html>
