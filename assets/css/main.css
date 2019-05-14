@@ -28,25 +28,42 @@ h5 {
     margin-top: 0.52rem;
 }
 
-#getRecipes > h5 {
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    padding-top: 1.25rem;
+.spacing {
+    padding-top: 2rem !important;
 }
 
-#getRestaurants > h5 {
+#getRecipes {
     font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
     text-align: center;
-    padding-top: 1.25rem;
-    margin-right: 50%;
+    padding-top: 5rem;
+}
+
+#getRestaurants {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+
+}
+
+#getRestaurantsIndex {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 5rem;
 }
 
 #indexBg {
-    max-height: 100%;
-    background-image: url(../images/bg01.jpg);
+    height: 100vh;
+    background-image: url(../images/mockup_bg01.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+input#food-input {
+    color: white;
+    width: 80%;
 }
 
 /****************** recipes list layout **********************/
@@ -76,6 +93,7 @@ h5 {
     max-height: 100px;
     overflow: hidden;
 }
+
 /****************** individual recipe layout **********************/
 #recipeLayoutBg {
     max-height: 100%;
@@ -120,7 +138,8 @@ h5 {
 /***************** restaurant page *****************/
 
 #restaurantBg {
-    background-image: url(../images/restaurantbg.jpg);
+    height: 100vh;
+    background-image: url(../images/restaurant2.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -129,7 +148,8 @@ h5 {
 #restaurantBlurb {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    color: white;
+    color: goldenrod;
+    margin-left: -10%;
 }
 
 #nomLogoRest {
