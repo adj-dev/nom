@@ -1,57 +1,90 @@
 // Declare a global variable to hold our list of restaurants
 let restaurantList;
 
+// Store users location globally
+let lat;
+let lon;
+
+// Settings for ajax request
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": undefined,
+  "method": "GET",
+  "headers": {
+    "user-key": "f4910eb62d5279e9608949f28307c69d"
+  }
+}
+
 function fetchRestaurants(keyword) {
   // Set restaurants to an empty array
   restaurantList = [];
 
-  // Settings for ajax request
-  const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": `https://developers.zomato.com/api/v2.1/search?q=${keyword}&lat=44.977753&lon=-93.265015&radius=24140`,
-    "method": "GET",
-    "headers": {
-      "user-key": "f4910eb62d5279e9608949f28307c69d"
-    }
+  // Get user location if we haven't already
+  // This allows us to eliminate the amount of time
+  // it takes for us to get the users coords if we already
+  // have them stored in our global variable.
+  if (!lat && !lon) {
+    navigator.geolocation.getCurrentPosition(pos => {
+      lat = pos.coords.latitude;
+      lon = pos.coords.longitude;
+      settings.url = `https://developers.zomato.com/api/v2.1/search?q=${keyword}&lat=${lat}&lon=${lon}&radius=24000&sort=real_distance`;
+      // Make the api call AFTER getting user coords
+      makeCall();
+    }, error => {
+      console.log(error);
+    });
+  } else {
+    settings.url = `https://developers.zomato.com/api/v2.1/search?q=${keyword}&lat=${lat}&lon=${lon}&radius=24000&sort=real_distance`;
+    makeCall();
   }
 
   // Make ajax request and handle response
-  $.ajax(settings).done(response => {
-    // Grab restaurants object from response
-    let { restaurants } = response;
-    // Grab the results_found property from response
-    let resultsFound = response.results_found;
-    // Iterate through each item (restaurant) in the response
-    for (let item of restaurants) {
-      let { restaurant } = item;
-      let name = restaurant.name;
-      let cuisines = restaurant.cuisines;
-      let location = {
-        locality: restaurant.location.locality,
-        address: restaurant.location.address
-      };
-      let url = restaurant.url;
-      let rating = {
-        aggregate_rating: restaurant.user_rating.aggregate_rating,
-        votes: restaurant.user_rating.votes
-      };
-      let averageCostForTwo = restaurant.average_cost_for_two;
-      // Add each hand-picked iteration to the desiredData array
-      restaurantList.push({
-        name,
-        cuisines,
-        location,
-        url,
-        rating,
-        resultsFound,
-        averageCostForTwo
-      });
-    }
-    // Render the results to the DOM
-    renderRestaurants(restaurantList);
-  });
-}
+  function makeCall() {
+    $.ajax(settings).done(response => {
+      // Grab restaurants object from response
+      let { restaurants } = response;
+      // Grab the results_found property from response
+      let resultsFound = response.results_found;
+      // Iterate through each item (restaurant) in the response
+      for (let item of restaurants) {
+        let { restaurant } = item;
+        let name = restaurant.name;
+        let cuisines = restaurant.cuisines;
+        let location = {
+          locality: restaurant.location.locality,
+          address: restaurant.location.address
+        };
+        let url = restaurant.url;
+        let rating = {
+          aggregate_rating: restaurant.user_rating.aggregate_rating,
+          votes: restaurant.user_rating.votes
+        };
+        let averageCostForTwo = restaurant.average_cost_for_two;
+        // Add each hand-picked iteration to the desiredData array
+        restaurantList.push({
+          name,
+          cuisines,
+          location,
+          url,
+          rating,
+          resultsFound,
+          averageCostForTwo
+        });
+      }
+      // Render the results to the DOM
+      if (restaurantList.length === 0) {
+        // if there are no results, render a message for the user
+        $('#results').empty();
+        let message = $('<h2>');
+        message.text("Sorry, we couldn't find anything");
+        $('#results').append(message);
+      } else {
+        renderRestaurants(restaurantList);
+      }
+    });
+  }
+};
 
 // Takes the results (restaurant list) as an arg and renders them to the DOM
 function renderRestaurants(results) {
@@ -91,19 +124,8 @@ function renderRestaurants(results) {
 // Submit handler for user input
 $(function () {
   // click handler for the submit button
-  $(document).on('click', '#food-submit', e => {
+  $(document).on('click', '#getRestaurants', e => {
     let searchTerm = e.target.parentElement.children[0].value;
-    // console.log(searchTerm);
     fetchRestaurants(searchTerm);
-  });
-  // handler for when user uses enter key
-  $(document).on('keydown', '#food-input', e => {
-    if (e.keyCode === 13) {
-      let searchTerm = e.target.value;
-      // Only attempt api call if input isn't empty
-      if (searchTerm != '') {
-        fetchRestaurants(searchTerm);
-      }
-    }
   });
 });
