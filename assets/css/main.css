@@ -23,27 +23,29 @@ h5 {
     margin-top: 0.52rem;
 }
 
-#getRecipes > h5 {
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    padding-top: 1.25rem;
-    margin-top: 10%;
+.spacing {
+    padding-top: 2rem !important;
 }
 
-#getRestaurants > h5 {
+#getRecipes {
     font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
     text-align: center;
-    padding-top: 1.25rem;
-    margin-right: 50%;
-    margin-top: 10%;
+    padding-top: 5rem;
 }
 
-#getRestaurantsIndex > h5 {
+#getRestaurants {
     font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
     text-align: center;
-    padding-top: 0.75rem;
-    margin-right: 50%;
-    margin-top: 10%;
+
+}
+
+#getRestaurantsIndex {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 5rem;
 }
 
 #indexBg {
