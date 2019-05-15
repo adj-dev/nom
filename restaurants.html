@@ -44,38 +44,44 @@
     </div>
 
 
-  <div class="container">
-    <div class="row" style="margin-top: 80px">
-      <div class="col 12" id="restaurantBlurb">
-          <p>Don't have time? <br>
+    <div class="container">
+      <div class="row">
+        <div class="col 12" id="restaurantBlurb">
+          <!-- <p>Don't have time? <br>
             Not enough ingredients? <br>
             Don't worry about it. <br>
             <br>
             Here's some places you can check out:
+          </p> -->
+
+          <p>Don't have time? </p>
+          <p>Not enough ingredients?</p>
+          <p>Don't worry about it.</p>
+          <p id="dynamic-p">
+            Here are some <span id="dynamic-food"></span> places you can check out:
           </p>
-
+        </div>
       </div>
+      <div class="row" id="results">
+        <!-- restaurant cards will auto-render here -->
+      </div>
+      <!-- end div of bg -->
     </div>
-    <div class="row" id="results">
-      <!-- restaurant cards will auto-render here -->
+    <!-- footer -->
+    <div class="footer">
+      <h6>Powered by Zomato and Spoonacular</h6>
     </div>
-    <!-- end div of bg -->
-  </div>
-  <!-- footer -->
-  <div class="footer">
-    <h6>Powered by Zomato and Spoonacular</h6>
-  </div>
-  <!-- restaurant api -->
-  <script src="assets/javascript/restaurantAPI.js"></script>
-  <script src="assets/javascript/recipeAPI.js"></script>
+    <!-- restaurant api -->
+    <script src="assets/javascript/restaurantAPI.js"></script>
+    <script src="assets/javascript/recipeAPI.js"></script>
 
-  <script>
-    // Submit handler for user input
-    $(function () {
-      let keyword = localStorage.getItem('search');
-      fetchRestaurants(keyword);
-    });
-  </script>
+    <script>
+      // Submit handler for user input
+      $(function () {
+        let keyword = localStorage.getItem('search');
+        fetchRestaurants(keyword);
+      });
+    </script>
 </body>
 
 </html>

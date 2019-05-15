@@ -17,9 +17,13 @@ const settings = {
   }
 }
 
+let dynamicTerm;
+
 function fetchRestaurants(keyword) {
   // Set restaurants to an empty array
   restaurantList = [];
+
+  dynamicTerm = keyword;
 
   // Get user location if we haven't already
   // This allows us to eliminate the amount of time
@@ -124,6 +128,13 @@ function renderRestaurants(results) {
     // Join it all together
     card.append(imgDiv).append(contentDiv).append(actionDiv);
     col.append(card);
+
+    // Before rendering results change background image settings
+    $('#restaurantBg').css('height', '100%');
+
+    // Make text dynamic
+    $('#dynamic-food').text(dynamicTerm);
+
     // Toss it into the DOM
     $('#results').append(col);
   }
