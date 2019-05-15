@@ -144,7 +144,7 @@ class nomRecipe {
 
             console.log(response);
             //Set recipe information
-            var recipeId = recipes.id;
+            var recipeId = response.id;
             var title = response.title;
             var cuisines = response.cuisines;
             var ingredientsList = response.extendedIngredients;
