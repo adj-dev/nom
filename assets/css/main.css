@@ -140,7 +140,7 @@ input#food-input {
 
 #restaurantBg {
     height: 100vh;
-    background-image: url(../images/restaurant2.jpg);
+    background-image: url(../images/restaurantTest.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -148,8 +148,10 @@ input#food-input {
 
 #restaurantBlurb {
     font-family: 'Raleway', sans-serif;
+    
+    font-size: 2em;
     font-weight: bold;
-    color: goldenrod;
+    color: white;
     margin-left: -10%;
 }
 
