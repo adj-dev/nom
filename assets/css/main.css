@@ -184,3 +184,7 @@ div.card
    color: rgb(122, 122, 122);
    text-align: center; 
 }
+
+.recipeInfo{
+    height: 110.4px;
+}
