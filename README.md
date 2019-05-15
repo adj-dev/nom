@@ -12,5 +12,11 @@ https://adj-dev.github.io/nom
 - Materialize
 - wireframe.cc (for wireframing)
 
+## Screenshot
+![screenshot](./images/nom-screenshot.png)
+
+## Interesting things
+Recipe results are set to random to generate a new set of recipes each time the user clicks recipe. 
+
 ## Team members
 Deepa Bhujle, Esther Hwang, Jeff Samuels, Ekrama Omar, Andrew Johnson
