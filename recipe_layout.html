@@ -2,115 +2,118 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <!-- google font -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Arvo:400,700|Josefin+Sans:400,600,700|Noto+Serif:400,700|Raleway:400,700,900"
-        rel="stylesheet" />
-    <!-- stylesheet -->
-    <link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
-    <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- in-house css -->
-    <script src="./assets/javascript/app.js" type="text/javascript"></script>
-    <title>NOM | Recipes.Places.Food</title>
+  <!-- materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- google font -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Arvo:400,700|Josefin+Sans:400,600,700|Noto+Serif:400,700|Raleway:400,700,900"
+    rel="stylesheet" />
+  <!-- stylesheet -->
+  <link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- in-house css -->
+  <script src="./assets/javascript/app.js" type="text/javascript"></script>
+  <title>NOM | Recipes.Places.Food</title>
 </head>
 
 <body>
 
-    <!-- bg image div -->
-    <div class="background-image" id="recipeLayoutBg">
+  <!-- bg image div -->
+  <div class="background-image" id="recipeLayoutBg">
     <!-- search bar -->
     <div class="row">
-        <div class="col s2">
-            <h4 id="nomLogo">NOM</h4>
-        </div>
-        <div class="input-field col s6">
-            <input id="food-input" type="text" class="input-std">
-            <label for="food-input">Search</label>
-        </div>
-        <!-- Navbar links -->
-        <div class="col s2 spacing">
-            <a href="./recipes.html" id="getRecipes">Recipes</a>
-        </div>
-        <div class="col s2 spacing">
-            <a href="./restaurants.html" id="getRestaurants">Restaurants</a>
-        </div>
+      <div class="col s2">
+        <h4 id="nomLogo"><a href="./index.html">NOM</a></h4>
+      </div>
+      <div class="input-field col s6">
+        <input id="food-input" type="text" class="input-std">
+        <label for="food-input">Search</label>
+      </div>
+      <!-- Navbar links -->
+      <div class="col s2 spacing">
+        <a href="./recipes.html" id="getRecipes">Recipes</a>
+      </div>
+      <div class="col s2 spacing">
+        <a href="./restaurants.html" id="getRestaurants">Restaurants</a>
+      </div>
     </div>
     <div class="container">
-    
-    <div class="initialDiv">
-      <h3></h3>
-    </div>
-    
-    <!-- Recipe + Ingredient Layout -->
 
-    <div class="row">
-      <div class="col s4">
-        <div class="card" id="ingredientCard">
-          <div class="card-image">
-            <img id="recipe-image" src="./assets/images/ingredients.jpg">
-          </div>
-          <div id="ingredients" class="card-content">
-            <h5 class="cardHeader">Ingredients</h5>
+      <div class="initialDiv">
+        <h3></h3>
+      </div>
+
+      <!-- Recipe + Ingredient Layout -->
+
+      <div class="row">
+        <div class="col s4">
+          <div class="card" id="ingredientCard">
+            <div class="card-image">
+              <img id="recipe-image" src="./assets/images/ingredients.jpg">
+            </div>
+            <div id="ingredients" class="card-content">
+              <h5 class="cardHeader">Ingredients</h5>
               <ul id="ingredList">
                 <li>Basil Pesto</li>
                 <li>Strawberries</li>
                 <li>Fresh Basil Leaves</li>
                 <li>Pizza Dough</li>
               </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col s8">
-        <div class="card" id="recipeCard">
-          <div class="card-image" id="recipeSpot">
-            <img id="recipeImage" src="./assets/images/mock_recipe_pics/basilstrawb.jpg">
-          </div>
-          <div class="card-content">
-            <h5 id="recipeName" class="cardHeader">RECIPE</h5>
-            <hr>
+        <div class="col s8">
+          <div class="card" id="recipeCard">
+            <div class="card-image" id="recipeSpot">
+              <img id="recipeImage" src="./assets/images/mock_recipe_pics/basilstrawb.jpg">
+            </div>
+            <div class="card-content">
+              <h5 id="recipeName" class="cardHeader">RECIPE</h5>
+              <hr>
               <div class="recipeContent">
-                  <p id="recipe_instructions">Ennui photo booth before they sold out fingerstache tousled kickstarter meditation keffiyeh beard next level hot chicken. Roof party everyday carry schlitz yuccie narwhal marfa chillwave. Offal church-key forage franzen sartorial shaman swag vice hammock, hashtag celiac bitters lyft yuccie tofu. </p>
-            </div>
-            <div class="card-action">
+                <p id="recipe_instructions">Ennui photo booth before they sold out fingerstache tousled kickstarter
+                  meditation keffiyeh beard next level hot chicken. Roof party everyday carry schlitz yuccie narwhal
+                  marfa chillwave. Offal church-key forage franzen sartorial shaman swag vice hammock, hashtag celiac
+                  bitters lyft yuccie tofu. </p>
+              </div>
+              <div class="card-action">
                 <a href="#" id="restaurantRequest">Nah, take me places</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
 
-    
-    <!-- footer -->
+
+      <!-- footer -->
       <div class="footer">
-          <h6>Powered by Zomato and Spoonacular</h6>
+        <h6>Powered by Zomato and Spoonacular</h6>
       </div>
 
     </div>
-  </div>          
-    <!-- jquery cdn for materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- api -->
-    <script src="assets/javascript/restaurantAPI.js"></script>
-    <script src="assets/javascript/recipeAPI.js"></script>
-    <!-- front-end -->
-    <script src="assets/javascript/app.js"></script>
-    <script>
-      //
-      $(document).ready(function(){
-        var recipeId = localStorage.getItem("recipeId");
-        console.log("SearchTerm is: " + recipeId)
-        getRecipesInfoByID(recipeId);
-      });       
-    </script>
+  </div>
+  <!-- jquery cdn for materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- api -->
+  <script src="assets/javascript/restaurantAPI.js"></script>
+  <script src="assets/javascript/recipeAPI.js"></script>
+  <!-- front-end -->
+  <script src="assets/javascript/app.js"></script>
+  <script>
+    //
+    $(document).ready(function () {
+      var recipeId = localStorage.getItem("recipeId");
+      console.log("SearchTerm is: " + recipeId)
+      getRecipesInfoByID(recipeId);
+    });       
+  </script>
 </body>
 
 </html>

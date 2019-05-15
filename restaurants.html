@@ -28,7 +28,7 @@
     <!-- search bar -->
     <div class="row">
       <div class="col s2">
-        <h4 id="nomLogoRest">NOM</h4>
+        <h4 id="nomLogoRest"><a href="./index.html">NOM</a></h4>
       </div>
       <div class="input-field col s6">
         <input id="food-input" type="text" class="restaurant-input-std">
@@ -76,13 +76,13 @@
     <script src="assets/javascript/recipeAPI.js"></script>
 
 
-  <script>
-    // Submit handler for user input
-    $(function () {
-      let keyword = localStorage.getItem('search');
-      fetchRestaurants(keyword);
-    });
-  </script>
+    <script>
+      // Submit handler for user input
+      $(function () {
+        let keyword = localStorage.getItem('search');
+        fetchRestaurants(keyword);
+      });
+    </script>
 </body>
 
 </html>
