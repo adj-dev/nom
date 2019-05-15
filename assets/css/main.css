@@ -15,6 +15,11 @@ h5 {
 
 /****************** navlink **********************/
 
+.header {
+
+    display: none
+}
+
 #nomLogo {
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -82,6 +87,7 @@ input#food-input {
     font-family: 'Raleway', sans-serif;
     max-width: 75%;
     margin: 10% auto; 
+    color: rgb(30, 30, 30);
 }
 
 .card-image {
@@ -158,6 +164,18 @@ input#food-input {
     color: white;
 }
 
+div#results {
+    background-color: rgba(0,0,0,0.6);
+    width: 80%;
+    color: white;
+}
+
+div.card
+
+#no-results {
+    text-align: center;
+}
+
 /****************** footer **********************/
 .footer {
    position: fixed;
@@ -167,4 +185,8 @@ input#food-input {
    background-color: rgb(213, 205, 219);
    color: rgb(122, 122, 122);
    text-align: center; 
+}
+
+.recipeInfo{
+    height: 110.4px;
 }

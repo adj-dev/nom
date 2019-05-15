@@ -25,23 +25,24 @@
 <body>
   <!-- bg image div -->
   <div class="background-image" id="restaurantBg">
-  <!-- search bar -->
-  <div class="row">
-    <div class="col s2">
-      <h4 id="nomLogoRest">NOM</h4>
-    </div>
-    <div class="input-field col s6">
-      <input id="food-input" type="text">
-      <label for="food-input">Search</label>
-    </div>
-    <!-- Navbar links -->
-    <div class="col s2 spacing">
+    <!-- search bar -->
+    <div class="row">
+      <div class="col s2">
+        <h4 id="nomLogoRest">NOM</h4>
+      </div>
+      <div class="input-field col s6">
+        <input id="food-input" type="text">
+        <label for="food-input">Search</label>
+      </div>
+      <!-- Navbar links -->
+      <div class="col s2 spacing">
         <a href="./recipes.html" id="getRecipes">Recipes</a>
-    </div>
-    <div class="col s2 spacing">
+      </div>
+      <div class="col s2 spacing">
         <a href="./restaurants.html" id="getRestaurants">Restaurants</a>
+      </div>
     </div>
-  </div>
+
 
   <div class="container">
     <div class="row" style="margin-top: 80px">
@@ -52,21 +53,30 @@
             <br>
             Here's some places you can check out:
           </p>
+
       </div>
     </div>
-  </div>
-  <div class="row" id="results">
-    <!-- restaurant cards will auto-render here -->
-  </div>
+    <div class="row" id="results">
+      <!-- restaurant cards will auto-render here -->
+    </div>
     <!-- end div of bg -->
-</div>
-    <!-- footer -->
+  </div>
+  <!-- footer -->
   <div class="footer">
-      <h6>Powered by Zomato and Spoonacular</h6>
+    <h6>Powered by Zomato and Spoonacular</h6>
   </div>
   <!-- restaurant api -->
   <script src="assets/javascript/restaurantAPI.js"></script>
   <script src="assets/javascript/recipeAPI.js"></script>
+
+  <script>
+    // Submit handler for user input
+    $(function () {
+      let keyword = localStorage.getItem('search');
+      console.log(keyword);
+      fetchRestaurants(keyword);
+    });
+  </script>
 </body>
 
 </html>
