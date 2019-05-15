@@ -21,7 +21,8 @@ class nomRecipe {
     let noOfResults = 0;
     
     function displayRecipesInfoByCuisines()
-
+        // Before rendering results change background image settings
+        $('#recipeBg').css('height', '100%');
     {                  
         // loop through each recipe collection and display
         for (var i = 0; i < nomRecipes.length; i++) {
@@ -198,6 +199,7 @@ class nomRecipe {
             //organize and display recipe
             var recipeCard = $("#recipeName");
             var instructionsList = recipe.instructionsList;
+
             //console.log(instructionsList);
             var instructionsP =  $("#recipe_instructions");
             var instructions = $("<ul>");
