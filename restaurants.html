@@ -31,7 +31,7 @@
         <h4 id="nomLogoRest">NOM</h4>
       </div>
       <div class="input-field col s6">
-        <input id="food-input" type="text">
+        <input id="food-input" type="text" class="restaurant-input-std">
         <label for="food-input">Search</label>
       </div>
       <!-- Navbar links -->
@@ -75,13 +75,14 @@
     <script src="assets/javascript/restaurantAPI.js"></script>
     <script src="assets/javascript/recipeAPI.js"></script>
 
-    <script>
-      // Submit handler for user input
-      $(function () {
-        let keyword = localStorage.getItem('search');
-        fetchRestaurants(keyword);
-      });
-    </script>
+
+  <script>
+    // Submit handler for user input
+    $(function () {
+      let keyword = localStorage.getItem('search');
+      fetchRestaurants(keyword);
+    });
+  </script>
 </body>
 
 </html>
