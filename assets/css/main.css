@@ -53,12 +53,12 @@ h5 {
     padding-top: 5rem;
 }
 
-#indexBg {
-    height: 100vh;
-    background-image: url(../images/mockup_bg01.png);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+#recipes {
+    text-align: center;
+}
+
+#restaurants {
+    text-align: center;
 }
 
 .restaurant-input-std {
@@ -68,7 +68,17 @@ h5 {
 
 .input-std {
     color: black;
-    width: 75%;
+    width: 80%;
+}
+
+/******************* index bg **************************/
+
+#indexBg {
+    height: 100vh;
+    background-image: url(../images/mockup_bg01.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /****************** recipes list layout **********************/
