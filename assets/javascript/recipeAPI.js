@@ -22,10 +22,7 @@ class nomRecipe {
     
     function displayRecipesInfoByCuisines()
 
-    {                
-        //remove the fake contents before filling
-        $(".s4").remove();
-    
+    {                  
         // loop through each recipe collection and display
         for (var i = 0; i < nomRecipes.length; i++) {
             //iterate through each recipe 
@@ -101,6 +98,9 @@ class nomRecipe {
             }
           }
 
+        //remove the fake contents before filling
+        $(".s4").remove();
+        
         $.ajax(settings).done(function (response) {
             //return list of recipes
             //noOfResults - this is for future display 12 results per page and display the total no of recipes
@@ -137,7 +137,11 @@ class nomRecipe {
               "cache-control": "no-cache"
             }
           }
-        console.log("Here");
+
+        $("#ingredList").remove();
+        var instructionsP =  $("#recipe_instructions");
+        instructionsP.text("");
+
         $.ajax(settings).done(function (response) {
             //return list of recipes
             //noOfResults - this is for future display 12 results per page and display the total no of recipes
@@ -175,7 +179,6 @@ class nomRecipe {
             img.attr("src", src);   
 
             //organize ingredients
-            $("#ingredList").remove();
             var ingredientsMain = $("#ingredients");
             var ingredList = $("<ul>");  
             ingredList.attr("id", "ingredList");
@@ -196,7 +199,6 @@ class nomRecipe {
             var instructionsList = recipe.instructionsList;
             //console.log(instructionsList);
             var instructionsP =  $("#recipe_instructions");
-            instructionsP.text("");
             var instructions = $("<ul>");
             instructionsP.append(instructions);  
             for (var i=0; i < instructionsList.length; i++)
@@ -207,7 +209,6 @@ class nomRecipe {
             } 
         }
     }
-
 
     //set the data for the details page to display
     function setRecipeDetails(recipeId){
@@ -223,6 +224,18 @@ class nomRecipe {
             }
         }
     }
+
+    // click handler for the recipe
+    $(document).on('click', '#getRecipes', function() {
+        searchTerm = $("#food-input").val();
+        //console.log(searchTerm);
+        // Only attempt api call if input isn't empty
+        if (searchTerm != '') {  
+            //localStorage.clear();
+            localStorage.setItem("search", searchTerm);
+            window.location.href="recipes.html";
+        }
+    });
 
     //when the image from the list of recipes is clicked
     $(document).on('click', '.imgRecipe', function(){
