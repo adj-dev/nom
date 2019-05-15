@@ -2,8 +2,9 @@
 let restaurantList;
 
 // Store users location globally
-let lat;
-let lon;
+let lat = localStorage.getItem('lat');
+let lon = localStorage.getItem('lon');
+
 
 // Settings for ajax request
 const settings = {
@@ -28,15 +29,30 @@ function fetchRestaurants(keyword) {
     navigator.geolocation.getCurrentPosition(pos => {
       lat = pos.coords.latitude;
       lon = pos.coords.longitude;
+
+      // save position in local storage
+      localStorage.setItem('lat', lat);
+      localStorage.setItem('lon', lon);
+
       settings.url = `https://developers.zomato.com/api/v2.1/search?q=${keyword}&lat=${lat}&lon=${lon}&radius=24000&sort=real_distance`;
       // Make the api call AFTER getting user coords
       makeCall();
     }, error => {
       console.log(error);
     });
+  } else if (keyword === 'null') {
+    renderNoResults();
   } else {
     settings.url = `https://developers.zomato.com/api/v2.1/search?q=${keyword}&lat=${lat}&lon=${lon}&radius=24000&sort=real_distance`;
     makeCall();
+  }
+
+  // Render for empty string request
+  function renderNoResults() {
+    $('#results').empty();
+    let message = $('<h4 id="no-results">');
+    message.text("Please enter a food type into the search bar");
+    $('#results').append(message);
   }
 
   // Make ajax request and handle response
@@ -72,16 +88,8 @@ function fetchRestaurants(keyword) {
           averageCostForTwo
         });
       }
-      // Render the results to the DOM
-      if (restaurantList.length === 0) {
-        // if there are no results, render a message for the user
-        $('#results').empty();
-        let message = $('<h2>');
-        message.text("Sorry, we couldn't find anything");
-        $('#results').append(message);
-      } else {
-        renderRestaurants(restaurantList);
-      }
+
+      renderRestaurants(restaurantList);
     });
   }
 };
@@ -121,11 +129,13 @@ function renderRestaurants(results) {
   }
 }
 
-// Submit handler for user input
-$(function () {
-  // click handler for the submit button
-  $(document).on('click', '#getRestaurants', e => {
-    let searchTerm = e.target.parentElement.children[0].value;
-    fetchRestaurants(searchTerm);
-  });
+// Set a localStorage key equal to the search term
+$(document).on('click', '#getRestaurants', () => {
+  let searchTerm = $('#food-input').val();
+
+  // If the search input is empty, simply point to the pre-existing value for "search" key
+  if (searchTerm === '') {
+    searchTerm = localStorage.getItem('search');
+  }
+  localStorage.setItem('search', searchTerm);
 });
