@@ -13,7 +13,7 @@ https://adj-dev.github.io/nom
 - wireframe.cc (for wireframing)
 
 ## Screenshot
-![screenshot](./images/nom-screenshot.png)
+![screenshot](images/nom-screenshot.png)
 
 ## Interesting things
 Recipe results are set to random to generate a new set of recipes each time the user clicks recipe. 
