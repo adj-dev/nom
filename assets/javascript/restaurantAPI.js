@@ -5,7 +5,7 @@ let restaurantList;
 let lat = localStorage.getItem('lat');
 let lon = localStorage.getItem('lon');
 
-console.log(lat, lon);
+
 // Settings for ajax request
 const settings = {
   "async": true,
@@ -40,7 +40,7 @@ function fetchRestaurants(keyword) {
     }, error => {
       console.log(error);
     });
-  } else if (keyword === '') {
+  } else if (keyword === 'null') {
     renderNoResults();
   } else {
     settings.url = `https://developers.zomato.com/api/v2.1/search?q=${keyword}&lat=${lat}&lon=${lon}&radius=24000&sort=real_distance`;
