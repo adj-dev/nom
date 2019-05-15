@@ -37,6 +37,7 @@ h5 {
     font-size: 1.5em;
     text-align: center;
     padding-top: 5rem;
+    margin-left: 25%;
 }
 
 #getRestaurants {
@@ -61,9 +62,14 @@ h5 {
     background-attachment: fixed;
 }
 
-input#food-input {
+.restaurant-input-std {
     color: white;
-    width: 80%;
+    width: 75%;
+}
+
+.input-std {
+    color: black;
+    width: 75%;
 }
 
 /****************** recipes list layout **********************/
