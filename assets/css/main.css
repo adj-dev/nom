@@ -74,7 +74,7 @@ h5 {
 /****************** recipes list layout **********************/
 
 #recipeBg {
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%);
     background-size: cover;
     background-repeat: no-repeat;
