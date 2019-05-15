@@ -100,7 +100,7 @@ class nomRecipe {
 
         //remove the fake contents before filling
         $(".s4").remove();
-        
+        $("#keyword").text(searchTerm);
         $.ajax(settings).done(function (response) {
             //return list of recipes
             //noOfResults - this is for future display 12 results per page and display the total no of recipes
