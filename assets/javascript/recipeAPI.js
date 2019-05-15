@@ -20,10 +20,10 @@ class nomRecipe {
     let nomRecipes = [];
     let noOfResults = 0;
     
-    function displayRecipesInfoByCuisines()
+    function displayRecipesInfoByCuisines() {
         // Before rendering results change background image settings
         $('#recipeBg').css('height', '100%');
-    {                  
+        
         // loop through each recipe collection and display
         for (var i = 0; i < nomRecipes.length; i++) {
             //iterate through each recipe 
