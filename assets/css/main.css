@@ -85,7 +85,8 @@ h5 {
 
 #recipeBg {
     height: 100vh;
-    background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%);
+    background-image: url(../images/recipes3.jpg);
+    /* background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%); */
     background-size: cover;
     background-repeat: no-repeat;
 }
