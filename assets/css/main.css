@@ -74,6 +74,7 @@ h5 {
 /****************** recipes list layout **********************/
 
 #recipeBg {
+    height: 100%;
     background: linear-gradient(0deg, rgba(190,190,190,1) 0%, rgba(239,243,247,1) 39%);
     background-size: cover;
     background-repeat: no-repeat;
@@ -102,7 +103,7 @@ h5 {
 
 /****************** individual recipe layout **********************/
 #recipeLayoutBg {
-    max-height: 100%;
+    min-height: 100%;
     background-image: url(../images/bg01.jpg);
     background-size: cover;
     background-position: center;
@@ -153,7 +154,6 @@ h5 {
 
 #restaurantBlurb {
     font-family: 'Raleway', sans-serif;
-    
     font-size: 2em;
     font-weight: bold;
     color: white;

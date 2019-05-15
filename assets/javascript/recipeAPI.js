@@ -197,6 +197,10 @@ class nomRecipe {
             //organize and display recipe
             var recipeCard = $("#recipeName");
             var instructionsList = recipe.instructionsList;
+
+            // Before rendering results change background image settings
+            $('#recipeBg').css('height', '100%');
+
             //console.log(instructionsList);
             var instructionsP =  $("#recipe_instructions");
             var instructions = $("<ul>");
