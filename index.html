@@ -72,31 +72,7 @@
     <script src="assets/javascript/recipeAPI.js"></script>
     <!-- front-end -->
     <script src="assets/javascript/app.js"></script>
-    <script>
-        
-        // click handler for the recipe
-        $(document).on('click', '#getRecipes', function() {
-                searchTerm = $("#food-input").val();
-                //console.log(searchTerm);
-                // Only attempt api call if input isn't empty
-                if (searchTerm != '') {  
-                    //localStorage.clear();
-                    localStorage.setItem("search", searchTerm);
-                    window.location.href="recipes.html";
-                }
-            });
-        // click handler for the restaurants
-        $(document).on('keydown', '#getRestaurants', e => {
-            searchTerm = $("#food-input").val();
-                //console.log(searchTerm);
-                // Only attempt api call if input isn't empty
-                if (searchTerm != '') {  
-                    //localStorage.clear();
-                    localStorage.setItem("search", searchTerm);
-                    window.location.href="restaurants.html";
-                }
-        });
-
+    <script>        
         $(document).ready(function () {
 
             $(".header").slideDown(2000);
