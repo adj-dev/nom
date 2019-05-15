@@ -112,6 +112,11 @@ h5 {
     overflow: hidden;
 }
 
+#recipe-results {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+}
+
 /****************** individual recipe layout **********************/
 #recipeLayoutBg {
     min-height: 100%;
