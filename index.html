@@ -28,43 +28,43 @@
 
     <!-- bg image div -->
     <div class="background-image" id="indexBg">
-    <!-- search bar -->
-    <div class="header row">
-        <div class="col s2">
+        <!-- search bar -->
+        <div class="header row">
+            <div class="col s2">
 
-            <h4 id="nomLogo">NOM</h4>
-        </div>
-        <div class="input-field col s5">
-            <input id="food-input" type="text">
-            <label for="food-input">Search</label>
-        </div>
-        <!-- Navbar links -->
-        <div class="col s2" id="recipes">
-            <a id="getRecipes">Recipes</a>
-        </div>
-        <div class="col s3" id="restaurants">
-            <a id="getRestaurants">Restaurants</a>
-        </div>
-    </div>
-    <div class="container">
-
-        <!-- Splash message -->
-        <div class="row">
-            <div class="col s12">
-                <br />
-                <br />
-                <h3 id="what-nom">What are you<br>NOMming for?</br></h3>
+                <h4 id="nomLogo">NOM</h4>
+            </div>
+            <div class="input-field col s5">
+                <input id="food-input" type="text">
+                <label for="food-input">Search</label>
+            </div>
+            <!-- Navbar links -->
+            <div class="col s2" id="recipes">
+                <a id="getRecipes">Recipes</a>
+            </div>
+            <div class="col s3" id="restaurants">
+                <a id="getRestaurants">Restaurants</a>
             </div>
         </div>
-        <!-- footer -->
+        <div class="container">
 
+            <!-- Splash message -->
+            <div class="row">
+                <div class="col s12">
+                    <br />
+                    <br />
+                    <h3 id="what-nom">What are you<br>NOMming for?</br></h3>
+                </div>
+            </div>
+            <!-- footer -->
+
+        </div>
+
+        <div class="footer">
+            <h6>Powered by Zomato and Spoonacular</h6>
+        </div>
     </div>
 
-    <div class="footer">
-        <h6>Powered by Zomato and Spoonacular</h6>
-    </div>
-</div>
-              
     <!-- jquery cdn for materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- api -->
@@ -73,29 +73,29 @@
     <!-- front-end -->
     <script src="assets/javascript/app.js"></script>
     <script>
-        
+
         // click handler for the recipe
-        $(document).on('click', '#getRecipes', function() {
-                searchTerm = $("#food-input").val();
-                //console.log(searchTerm);
-                // Only attempt api call if input isn't empty
-                if (searchTerm != '') {  
-                    localStorage.clear();
-                    localStorage.setItem("search", searchTerm);
-                    window.location.href="recipes.html";
-                }
-            });
-        // click handler for the restaurants
-        $(document).on('keydown', '#getRestaurants', e => {
+        $(document).on('click', '#getRecipes', function () {
             searchTerm = $("#food-input").val();
-                //console.log(searchTerm);
-                // Only attempt api call if input isn't empty
-                if (searchTerm != '') {  
-                    localStorage.clear();
-                    localStorage.setItem("search", searchTerm);
-                    window.location.href="restaurants.html";
-                }
+            //console.log(searchTerm);
+            // Only attempt api call if input isn't empty
+            if (searchTerm != '') {
+                // localStorage.clear();
+                localStorage.setItem("search", searchTerm);
+                window.location.href = "recipes.html";
+            }
         });
+        // click handler for the restaurants
+        // $(document).on('keydown', '#getRestaurants', e => {
+        //     searchTerm = $("#food-input").val();
+        //         //console.log(searchTerm);
+        //         // Only attempt api call if input isn't empty
+        //         if (searchTerm != '') {  
+        //             localStorage.clear();
+        //             localStorage.setItem("search", searchTerm);
+        //             window.location.href="restaurants.html";
+        //         }
+        // });
 
         $(document).ready(function () {
 

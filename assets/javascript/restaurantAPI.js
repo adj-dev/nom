@@ -132,5 +132,10 @@ function renderRestaurants(results) {
 // Set a localStorage key equal to the search term
 $(document).on('click', '#getRestaurants', () => {
   let searchTerm = $('#food-input').val();
-  localStorage.setItem('keyword', searchTerm);
+
+  // If the search input is empty, simply point to the pre-existing value for "search" key
+  if (searchTerm === '') {
+    searchTerm = localStorage.getItem('search');
+  }
+  localStorage.setItem('search', searchTerm);
 });
