@@ -85,11 +85,12 @@ class nomRecipe {
     }
 
     function getRecipesInfoByCuisines(searchTerm)
+    // tags=italian
     {        
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=12&tags=italian",
+            "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=12&tags=${searchTerm}`,
             "method": "GET",
             "headers": {
               "X-RapidAPI-Key": "d8801f3ce8msha12100d587bc143p151da1jsn3c1a652ff0a6",
